@@ -1,10 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
-  "type": "module",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --files src/app.ts",
+    "build": "tsc && cp ./package.json ./dist",
+    "start": "node dist/app.js"
   },
   "keywords": [],
   "author": "Divine DevCodes",
@@ -14,13 +16,16 @@
     "@types/bcrypt": "^5.0.2",
     "@types/cookie-parser": "^1.4.8",
     "@types/cors": "^2.8.17",
+    "@types/dotenv": "^8.2.3",
     "@types/express": "^5.0.0",
     "@types/jsonwebtoken": "^9.0.7",
-    "@types/mongoose": "^5.11.96",
+    "@types/mongoose": "^5.11.97",
     "@types/passport": "^1.0.17",
     "@types/passport-jwt": "^4.0.1",
     "@types/qrcode": "^1.5.5",
-    "@types/speakeasy": "^2.0.10"
+    "@types/speakeasy": "^2.0.10",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.7.2"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
