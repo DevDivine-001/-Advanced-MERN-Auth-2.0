@@ -1,7 +1,7 @@
-import { ErrorRequestHandler } from "express";
+import { ErrorRequestHandler, NextFunction } from "express";
 import { HTTPSTATUS } from "../config/http.config";
 
-export const errorHandler: ErrorRequestHandler = (error, req, res, next): any => {
+export const errorHandler: ErrorRequestHandler = (error, req, res, next: NextFunction): any => {
     console.error(`Error Occurred on PATH: ${req.path}`, error)
 
     if (error instanceof SyntaxError) {

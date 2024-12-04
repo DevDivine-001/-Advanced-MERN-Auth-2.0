@@ -6,6 +6,7 @@ import { config } from "./config/app.config"
 import connectDatabase from "./DB/Database"
 import { errorHandler } from "./middlewares/errorHandler"
 import { HTTPSTATUS } from "./config/http.config"
+import { asyncHandler } from "./middlewares/asyncHandler"
 
 
 const app = express()
@@ -22,13 +23,13 @@ app.use(cors({
 
 app.use(cookieParser())
 
-app.post("/", (req: Request, res: Response) => {
+app.get("/", asyncHandler(async (req: Request, res: Response) => {
     res.status(HTTPSTATUS.OK).json({
         message: "Hello Subscribers!!!!👋👋👋👋"
 
     })
 })
-
+)
 app.use(errorHandler)
 
 app.listen(config.PORT, async () => {
