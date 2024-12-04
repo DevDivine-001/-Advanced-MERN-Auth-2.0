@@ -21,7 +21,7 @@ app.use(cors({
 
 app.use(cookieParser())
 
-app.get("/", (req: Request, res: Response) => {
+app.post("/", (req: Request, res: Response) => {
     res.status(200).json({
         message: "Hello Subscribers!!!!👋👋👋👋"
 
