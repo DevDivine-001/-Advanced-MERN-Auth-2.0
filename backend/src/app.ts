@@ -5,6 +5,7 @@ import cors from "cors"
 import { config } from "./config/app.config"
 import connectDatabase from "./DB/Database"
 import { errorHandler } from "./middlewares/errorHandler"
+import { HTTPSTATUS } from "./config/http.config"
 
 
 const app = express()
@@ -22,7 +23,7 @@ app.use(cors({
 app.use(cookieParser())
 
 app.post("/", (req: Request, res: Response) => {
-    res.status(200).json({
+    res.status(HTTPSTATUS.OK).json({
         message: "Hello Subscribers!!!!👋👋👋👋"
 
     })
