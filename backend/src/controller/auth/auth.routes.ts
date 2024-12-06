@@ -1,10 +1,10 @@
-// import { Router } from "express";
+import { Router } from "express";
 
 
-// import { authController } from "./auth.module";
+import { authController } from "./auth.module";
 
-// const authRoutes = Router()
+const authRoutes = Router()
 
-// authRoutes.post("/register", authController.register)
+authRoutes.post("/register", authController.register)
 
-// export default authRoutes 
+export default authRoutes 
