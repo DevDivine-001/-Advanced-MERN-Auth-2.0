@@ -7,10 +7,11 @@ import connectDatabase from "./DB/Database"
 import { errorHandler } from "./middlewares/errorHandler"
 import { HTTPSTATUS } from "./config/http.config"
 import { asyncHandler } from "./middlewares/asyncHandler"
+import authRoutes from "./controller/auth/auth.routes"
 
 
 const app = express()
-// const BASE_PATH = config.BASE_PATH
+const BASE_PATH = config.BASE_PATH
 
 
 app.use(express.json())
@@ -30,6 +31,17 @@ app.get("/", asyncHandler(async (req: Request, res: Response) => {
     })
 })
 )
+
+app.post("/", asyncHandler(async (req: Request, res: Response) => {
+    res.status(HTTPSTATUS.OK).json({
+        message: "Hello Subscribers!!!!👋👋👋👋"
+
+    })
+})
+)
+
+app.use(`${BASE_PATH}/auth`, authRoutes)
+
 app.use(errorHandler)
 
 app.listen(config.PORT, async () => {
