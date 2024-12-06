@@ -1,9 +1,9 @@
-// import { RegisterDate } from "../../common/interface/auth.interface";
+import { RegisterDate } from "../../common/interface/auth.interface";
 
-// export class AuthService {
-//     public async register(registerDate: RegisterDate) {
+export class AuthService {
+    public async register(registerDate: RegisterDate) {
 
-//         const { name, email, password, userAgent } = registerDate
-//     }
+        const { name, email, password, userAgent } = registerDate
+    }
 
-// }
+}
